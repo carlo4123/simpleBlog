@@ -1,0 +1,29 @@
+<%- include("partials/header")%> 
+
+<h1>Home</h1>
+
+<p><%=homeContent%></p>
+
+
+<%toPostHome.forEach(function(articles){%> 
+    <!-- title -->
+    <h1><%=articles.title %> </h1>
+    <!-- compose -->
+    <p>
+        <%=articles.content.substring(0,100)%>
+         <%if(articles.content.length >100){%>
+       ...
+        <a href="/post/<%= articles.title %> ">readmore </a>
+        <%}else{%>
+            <% console.log(articles.content.length)%>
+            <%}%>
+    </p>    
+
+    <%console.log(articles)%> 
+    <%})%> 
+
+
+
+
+
+<%- include("partials/footer")%> 
